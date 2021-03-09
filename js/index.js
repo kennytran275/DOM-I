@@ -47,16 +47,15 @@ let logo = document.getElementById("logo-img");
 logo.setAttribute("src", siteContent["nav"]["img-src"]);
 
 // Selectors
-let header = document.querySelector("header");
-let nav = document.querySelector("nav");
-let cta = document.querySelector(".cta");
-let mainContent = document.querySelector(".main-content");
-let contact = document.querySelector(".contact");
-let footer = document.querySelector("footer");
+// let header = document.querySelector("header");
+// let nav = document.querySelector("nav");
+// let cta = document.querySelector(".cta");
+// let mainContent = document.querySelector(".main-content");
+// let contact = document.querySelector(".contact");
+// let footer = document.querySelector("footer");
 
 // TODO display nav bar
 const links = document.querySelectorAll("nav a");
-const linksRealArray = Array.from(links);
 
 links[0].textContent = "Services";
 links[1].textContent = "Product";
@@ -65,9 +64,47 @@ links[3].textContent = "Features";
 links[4].textContent = "About";
 links[5].textContent = "Contact";
 // TODO display cta and img
+const h1 = document.querySelector("h1");
+h1.textContent = siteContent.cta.h1;
 
+const button = document.querySelector("button");
+button.textContent = siteContent.cta.button;
+
+let ctaImg = document.getElementById("cta-img");
+ctaImg.setAttribute("src", siteContent["cta"]["img-src"]);
 // TODO display main-content and img
+const topContentTitles = document.querySelectorAll(".top-content h4");
+topContentTitles[0].textContent = siteContent["main-content"]["features-h4"];
+topContentTitles[1].textContent = siteContent["main-content"]["about-h4"];
 
+const topContentPara = document.querySelectorAll(".top-content p");
+topContentPara[0].textContent = siteContent["main-content"]["features-content"];
+topContentPara[1].textContent = siteContent["main-content"]["about-content"];
+
+const bottomContentTitles = document.querySelectorAll(".bottom-content h4");
+bottomContentTitles[0].textContent = siteContent["main-content"]["services-h4"];
+bottomContentTitles[1].textContent = siteContent["main-content"]["product-h4"];
+bottomContentTitles[2].textContent = siteContent["main-content"]["vision-h4"];
+
+const bottomContentPara = document.querySelectorAll(".bottom-content p");
+bottomContentPara[0].textContent =
+  siteContent["main-content"]["services-content"];
+bottomContentPara[1].textContent =
+  siteContent["main-content"]["product-content"];
+bottomContentPara[2].textContent =
+  siteContent["main-content"]["vision-content"];
+
+let middleImg = document.getElementById("middle-img");
+middleImg.setAttribute("src", siteContent["main-content"]["middle-img-src"]);
 // TODO display contact
+const contactTitle = document.querySelector(".contact h4");
+contactTitle.textContent = siteContent["contact"]["contact-h4"];
+
+const contactPara = document.querySelectorAll(".contact p");
+contactPara[0].textContent = siteContent.contact.address;
+contactPara[1].textContent = siteContent.contact.phone;
+contactPara[2].textContent = siteContent.contact.email;
 
 // TODO display footer
+const footer = document.querySelector("footer p");
+footer.textContent = siteContent["footer"]["copyright"];
