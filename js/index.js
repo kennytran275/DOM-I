@@ -46,23 +46,13 @@ const siteContent = {
 let logo = document.getElementById("logo-img");
 logo.setAttribute("src", siteContent["nav"]["img-src"]);
 
-// Selectors
-// let header = document.querySelector("header");
-// let nav = document.querySelector("nav");
-// let cta = document.querySelector(".cta");
-// let mainContent = document.querySelector(".main-content");
-// let contact = document.querySelector(".contact");
-// let footer = document.querySelector("footer");
-
 // TODO display nav bar
 const links = document.querySelectorAll("nav a");
 
-links[0].textContent = "Services";
-links[1].textContent = "Product";
-links[2].textContent = "Vision";
-links[3].textContent = "Features";
-links[4].textContent = "About";
-links[5].textContent = "Contact";
+for (let i = 0; i < links.length; i++) {
+  links[i].textContent = siteContent["nav"][`nav-item-${i + 1}`];
+}
+
 // TODO display cta and img
 const h1 = document.querySelector("h1");
 h1.textContent = siteContent.cta.h1;
@@ -72,6 +62,7 @@ button.textContent = siteContent.cta.button;
 
 let ctaImg = document.getElementById("cta-img");
 ctaImg.setAttribute("src", siteContent["cta"]["img-src"]);
+
 // TODO display main-content and img
 const topContentTitles = document.querySelectorAll(".top-content h4");
 topContentTitles[0].textContent = siteContent["main-content"]["features-h4"];
@@ -96,6 +87,7 @@ bottomContentPara[2].textContent =
 
 let middleImg = document.getElementById("middle-img");
 middleImg.setAttribute("src", siteContent["main-content"]["middle-img-src"]);
+
 // TODO display contact
 const contactTitle = document.querySelector(".contact h4");
 contactTitle.textContent = siteContent["contact"]["contact-h4"];
@@ -108,3 +100,21 @@ contactPara[2].textContent = siteContent.contact.email;
 // TODO display footer
 const footer = document.querySelector("footer p");
 footer.textContent = siteContent["footer"]["copyright"];
+
+// Change nav text to green
+for (let i = 0; i < links.length; i++) {
+  links[i].style.color = "green";
+}
+
+// Adding two links to nav
+const blogLink = document.createElement("a");
+blogLink.textContent = "Blog";
+blogLink.href = "#";
+blogLink.style.color = "green";
+document.querySelector("nav").appendChild(blogLink);
+
+const homeLink = document.createElement("a");
+homeLink.textContent = "Home";
+homeLink.href = "#";
+homeLink.style.color = "green";
+document.querySelector("nav").prepend(homeLink);
